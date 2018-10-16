@@ -50,5 +50,13 @@ describe('Shopping cart', function() {
             assert.equal(cart.totalPrice, 0);
         });
 
+
+        it('returns an array with two items', function() {
+            cart.add(product, product.id);
+            cart.add(product, product.id);
+            assert.deepEqual(cart.generateArray(), [product, product]);
+        });
+
+
     });
 });
